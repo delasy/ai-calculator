@@ -1,0 +1,63 @@
+.pageShell {
+  align-items: center;
+  display: grid;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  grid-template-columns: minmax(0, 1fr);
+  margin: 0 auto;
+  min-height: 100svh;
+  padding: clamp(1.25rem, 4vw, 3rem);
+  width: min(100%, 72rem);
+}
+
+.hero {
+  justify-self: stretch;
+  max-width: 36rem;
+}
+
+.eyebrow {
+  color: #5f6673;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin: 0 0 0.85rem;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  color: #111317;
+  font-size: clamp(2.4rem, 9vw, 5rem);
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.intro {
+  color: #454b55;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.7;
+  margin: 1.25rem 0 0;
+}
+
+@media (min-width: 56rem) {
+  .pageShell {
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 25rem);
+  }
+
+  .hero {
+    align-self: center;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .eyebrow {
+    color: #aeb6c6;
+  }
+
+  .hero h1 {
+    color: #f8fafc;
+  }
+
+  .intro {
+    color: #d3d8e1;
+  }
+}
