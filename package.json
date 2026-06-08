@@ -9,7 +9,13 @@
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
     "type-check": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "validate:static": "node scripts/validate-static-export.mjs",
+    "test:static": "pnpm run build && pnpm run validate:static",
+    "cf:deploy:production": "node scripts/deploy-worker.mjs --name ai-calculator --route \"calc.delasy.com/*\"",
+    "cf:deploy:preview": "node scripts/deploy-worker.mjs",
+    "cf:preview:metadata": "node scripts/preview-environment.mjs",
+    "cf:preview:cleanup": "node scripts/cleanup-preview.mjs"
   },
   "dependencies": {
     "next": "^16.2.7",
@@ -23,6 +29,7 @@
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.7",
     "typescript": "^5.9.3",
-    "vitest": "^4.1.8"
+    "vitest": "^4.1.8",
+    "wrangler": "^4.98.0"
   }
 }
